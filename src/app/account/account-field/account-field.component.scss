@@ -1,0 +1,13 @@
+.delete-btn {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.form-group {
+  &:hover {
+    .delete-btn {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}

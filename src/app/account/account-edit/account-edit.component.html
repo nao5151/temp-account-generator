@@ -1,0 +1,15 @@
+<form (submit)="onSubmit($event)" autocomplete="off">
+  <app-account-field
+    *ngFor="let field of fieldService.fields$ | async; let i = index"
+    [field]="field"
+    [key]="i"
+  ></app-account-field>
+  <ul class="row list-unstyled">
+    <li class="col-6">
+      <button type="button" class="btn btn-block btn-outline-secondary" (click)="onClickCancel()">Cancel</button>
+    </li>
+    <li class="col-6">
+      <button type="submit" class="btn btn-block btn-success">Save</button>
+    </li>
+  </ul>
+</form>

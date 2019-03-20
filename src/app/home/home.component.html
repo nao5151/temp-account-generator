@@ -1,0 +1,16 @@
+<p class="text-center">いかなる責任も負いません。</p>
+<p class="text-center"><a href="#">GitHub</a></p>
+<p><a routerLink="/new" class="btn btn-block btn-primary">new account</a></p>
+
+<div *ngIf="(accountService.accounts$ | async).length > 0">
+  <ul class="list-group">
+    <li
+      *ngFor="let account of accountService.accounts$ | async"
+      class="list-group-item"
+    ><a [routerLink]="account.id">Created on {{account.id | date: 'medium'}}</a></li>
+  </ul>
+
+  <p class="mt-4 text-center">
+    <button (click)="clear()" class="btn btn-sm btn-outline-danger">Reset</button>
+  </p>
+</div>

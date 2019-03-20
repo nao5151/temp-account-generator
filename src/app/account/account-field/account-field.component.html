@@ -1,0 +1,17 @@
+<fieldset class="form-group">
+  <label [for]="key">{{field.label}}</label>
+  <div class="row align-items-center">
+    <div [ngSwitch]="field.type" class="col">
+      <textarea *ngSwitchCase="'textarea'" class="form-control" [id]="key" [name]="key" [(ngModel)]="field.value"></textarea>
+      <input *ngSwitchDefault type="text" class="form-control" [id]="key" [name]="key" [(ngModel)]="field.value">
+    </div>
+    <div
+      *ngIf="field.type === 'password'"
+      class="col-auto"
+    >
+      <app-password-generator
+        (generated)="this.onGenerated($event)"
+      ></app-password-generator>
+    </div>
+  </div>
+</fieldset>

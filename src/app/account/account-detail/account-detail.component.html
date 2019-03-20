@@ -1,0 +1,28 @@
+<ng-container *ngIf="account">
+  <fieldset *ngFor="let field of account.fields; let i = index" class="form-group">
+    <label [for]="i">{{field.label}}</label>
+    <div class="input-group">
+      <ng-container [ngSwitch]="field.type">
+        <textarea *ngSwitchCase="'textarea'" readonly class="form-control" [id]="i" [name]="i" [(ngModel)]="field.value"></textarea>
+        <input *ngSwitchCase="'password'" readonly type="password" class="form-control" [id]="i" [name]="i" [(ngModel)]="field.value">
+        <input *ngSwitchDefault type="text" readonly class="form-control" [id]="i" [name]="i" [(ngModel)]="field.value">
+      </ng-container>
+      <div class="input-group-append">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          (click)="onClickCopy(field.value)"
+        ><i class="fas fa-file-import"></i></button>
+      </div>
+    </div>
+  </fieldset>
+  <ul class="row list-unstyled">
+    <li class="col-6">
+      <button class="btn btn-block btn-outline-danger" (click)="onClickDelete()">Delete</button>
+    </li>
+    <li class="col-6">
+      <a class="btn btn-block btn-primary" [routerLink]="['/', id, 'edit']">Edit</a>
+    </li>
+  </ul>
+  <a [routerLink]="['/']">&lt; Home</a>
+</ng-container>
