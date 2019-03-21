@@ -1,5 +1,9 @@
 # TempAccountGenerator
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/40883be8-7026-4c7e-994c-4d93545e497d/deploy-status)](https://app.netlify.com/sites/temp-account-generator/deploys)
+
+DEMO: https://temp-account-generator.netlify.com/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
 
 ## Development server
