@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "npm run build && gh-pages -d dist -u \"Your Name <email@example.com>\""
+    "deploy": "npm run build && gh-pages -d dist -u \"NaoyukiMiyazaki <16092751+NaoyukiMiyazaki@users.noreply.github.com>\""
   },
   "private": true,
   "dependencies": {
